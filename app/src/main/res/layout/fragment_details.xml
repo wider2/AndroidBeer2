@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_bright"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/toolbar_search" />
+
+
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:id="@+id/diagonalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:clickable="false"
+        diagonal:diagonal_angle="10"
+        diagonal:diagonal_direction="right"
+        diagonal:diagonal_handleMargins="true"
+        diagonal:diagonal_position="bottom">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/kenBurnsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_light2"
+            android:clickable="false"
+            android:longClickable="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noimage" />
+
+        <TextView
+            android:id="@+id/tv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginLeft="@dimen/margin_big"
+            android:layout_marginRight="@dimen/margin_big"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="70dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:textSize="25sp" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginTop="-35dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <!--
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:src="@drawable/avatar" />
+            -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/abv"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_abv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ibu"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewLabel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ebc"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_ebc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big"
+        android:layout_marginStart="@dimen/margin_big"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/dark_grey" />
+
+
+
+    <ScrollView
+        android:id="@+id/sv_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_output"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginBottom="@dimen/margin_big"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_boxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/tv_label_tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tagline"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_brewed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/first_brewed"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_brewed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_srm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/srm"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_srm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_ph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/ph"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_ph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/attenuation_level"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/volume"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_boil_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/boil_volume"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_boil_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_mash_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/mash_temp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_mash_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_fermentation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/ferm_temp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_fermentation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_food_pairing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/food_pairing"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_food_pairing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_brewers_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/brewers_tips"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_brewers_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tv_label_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/by"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/dark_grey" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
